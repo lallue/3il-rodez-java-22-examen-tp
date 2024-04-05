@@ -3,7 +3,7 @@ package rodez.java.exam.tp.task;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.swing.*;
 
@@ -11,12 +11,14 @@ public class TaskView extends JFrame{
 	private JTextField titreField = new JTextField(20);
 	private JTextArea descriptionArea= new JTextArea(5,20);
 	private JTextField dateEcheanceField = new JTextField(20);
-	private TaskControlleur controlleur;
+	
+	private TaskController controller;
 	
 	private JButton addButton = new JButton("Ajout Tache");
-	
-	public void TaskView(TaskControlleur controlleur){
-		this.controlleur = controlleur;
+
+
+	public void TaskView(TaskController controller){
+		this.controller = controller;
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(400,300);	
 		
@@ -57,11 +59,8 @@ public class TaskView extends JFrame{
 			    Date duedate = parseDate(date);
 			    
 			    Task task = new Task(titre, description, duedate);
-			    task.setTitre(titre);
-			    task.setDescription(description);
-			    task.setDateEcheance(duedate);
-			    
-			    controlleur.addTask(task);
+
+			    controller.addTask(task);
 			    
 			    titreField.setText("");
 			    descriptionArea.setText("");
@@ -74,10 +73,6 @@ public class TaskView extends JFrame{
 
 	protected Date parseDate(String date) {
 		
-		return null;
-	}
-	public static void main(String[] args) {
-		TaskControlleur conttroller = new TaskControlleur();
-		new TaskView();
+		return new Date();
 	}
 }

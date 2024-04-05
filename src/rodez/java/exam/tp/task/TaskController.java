@@ -2,16 +2,14 @@ package rodez.java.exam.tp.task;
 
 import java.util.*;
 
-public class TaskControlleur {
+public class TaskController {
 	private List<Task> taskList;
 
-	public TaskControlleur() {
+	public TaskController() {
 		taskList =  new ArrayList<>();
 	}
 	
 	public void addTask(Task task) {
 		taskList.add(task);
 	}
-	
-
 }
