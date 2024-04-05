@@ -17,7 +17,7 @@ public class TaskView extends JFrame{
 	private JButton addButton = new JButton("Ajout Tache");
 
 
-	public void TaskView(TaskController controller){
+	public TaskView(TaskController controller){
 		this.controller = controller;
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(400,300);	
